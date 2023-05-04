@@ -24,23 +24,21 @@ sftp.close()
 transport.close()
 archivo = ""
 a = open('access.log', 'r')
-for line in a:
-    archivo += line
-
 f = open('serverLog.html','w')
-f.write("""<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div>"""+archivo+"""</div>
-</body>
-</html>
-""")
+for line in a:
+    f.write("""<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div>"""+line+"""</div>
+    </body>
+    </html>
+    """)
 webbrowser.open_new_tab('serverLog.html')
 a.close()
 f.close()
