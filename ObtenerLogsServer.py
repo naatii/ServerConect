@@ -1,6 +1,6 @@
 import paramiko
 import webbrowser
-
+# '172.26.1.194'
 # Credenciales de acceso
 hostname = '172.26.1.194'
 port = 22
